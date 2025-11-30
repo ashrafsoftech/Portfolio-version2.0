@@ -1,108 +1,93 @@
+import "@fontsource/inter/300.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import { Routes, Route, NavLink } from "react-router-dom";
+import Home from "./components/Home";
+import Project from "./components/Project";
+import About from "./components/About";
+import Contact from "./components/Contact";
+
 function App() {
   return (
     <div>
-      {/* NAV */}
       <nav className="navbar navbar-expand-sm navbar-light bg-light mb-sm-4 mb-2">
-        <div className="nav-content container-fluid">
-          <a
-            href="/"
-            className="d-flex align-items-center mb-md-0 me-sm-auto link-body-emphasis text-decoration-none bg-white"
-          >
-            <img
-              src="./profile2.jpg"
-              alt=""
-              className="bg-white"
-              width="50"
-              height="50"
-            />
-          </a>
-          <a className="navbar-brand bg-white" href="#">
-            AshrafSoftech
-          </a>
+        <div className="container-fluid d-flex align-items-center justify-content-between">
+          {/* LEFT SIDE BRAND */}
+          <div className="d-flex align-items-center">
+            <h1 className="m-0">
+              <NavLink className="navbar-brand bg-white" to="/">
+                Ashraf Softech
+              </NavLink>
+            </h1>
+          </div>
+
+          {/* PROFILE ICON — ALWAYS VISIBLE */}
+          <div className="d-flex align-items-center order-sm-3 ms-3">
+            <div className="profile-ring">
+              <img src="./profile2.jpg" className="ring-img" alt="profile" />
+            </div>
+          </div>
+
+          {/* NAV TOGGLER */}
           <button
-            className="navbar-toggler"
+            className="navbar-toggler order-sm-2"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarsExample03"
-            aria-controls="navbarsExample03"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon bg-white"></span>
           </button>
+
+          {/* COLLAPSIBLE NAV MENU */}
           <div
-            className="collapse navbar-collapse bg-white justify-content-end ms-auto"
+            className="collapse navbar-collapse bg-white justify-content-end order-sm-1"
             id="navbarsExample03"
           >
-            <ul className="navbar-nav ms-auto mb-2 mb-sm-0">
+            <ul className="navbar-nav ms-auto mb-2 mb-sm-0 align-items-center">
               <li className="nav-item bg-white">
-                <a className="nav-link active" aria-current="page" href="#">
+                <NavLink to="/" className="nav-link">
                   Home
-                </a>
+                </NavLink>
               </li>
+
               <li className="nav-item bg-white">
-                <a className="nav-link" href="#">
+                <NavLink to="/project" className="nav-link">
                   Project
-                </a>
+                </NavLink>
               </li>
+
               <li className="nav-item bg-white">
-                <a className="nav-link" href="#">
+                <NavLink to="/about" className="nav-link">
                   About
-                </a>
+                </NavLink>
               </li>
+
               <li className="nav-item bg-white">
-                <a className="nav-link" href="#">
+                <NavLink to="/contact" className="nav-link">
                   Contact
-                </a>
+                </NavLink>
+              </li>
+
+              {/* SUN ICON — collapses with menu */}
+              <li className="nav-item bg-white ms-3">
+                <div className="sun-icon-wrapper">
+                  <img src="./sun.svg" alt="theme" className="sun-icon" />
+                </div>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <div className="home-body container-fluid">
-        <div className="sidebar">
-          <a target="_blank" href="https://github.com/ashrafsoftech">
-            <img src="./github.svg" alt="github" />
-          </a>
-          <a target="_blank" href="#">
-            <img src="./linkedin.svg" alt="github" />
-          </a>
-          <a target="_blank" href="https://twitter.com/AsharfAriy44884">
-            <img src="./twitter.svg" alt="github" />
-          </a>
-          <a target="_blank" href="https://wa.me/234816892838">
-            <img src="./whatsapp.svg" alt="github" />
-          </a>
-        </div>
-
-        <div className="hero-container d-sm-flex d-grid bg-white shadow">
-          <div className="hero col-sm-6 col-7 text-container p-3">
-            <h3>HEY, I'M ASHRAF - FrontEnd Developer</h3>
-            <p>
-              I’m a Frontend Developer passionate about building modern web
-              experiences that blend usability, performance, and thoughtful
-              design. I love taking concepts from rough sketches to polished
-              digital products, creating interfaces that are responsive,
-              accessible, and enjoyable to interact with. My goal is to build
-              websites that make a lasting impression while keeping the user’s
-              needs at the center of every decision.
-            </p>
-            <div className="button-container d-sm-flex gap-2 d-grid px-sm-0 px-3">
-              <button type="button" className="btn btn-primary">
-                view projects
-              </button>
-              <button type="button" className="btn btn-outline-secondary">
-                check out my blog
-              </button>
-            </div>
-          </div>
-
-          <div className="hero-img col-sm-6 col-5">
-            <img src="./webPictures.png" alt="web img" />
-          </div>
-        </div>
-      </div>
+      {/* ROUTING */}
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/project" element={<Project />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
     </div>
   );
 }

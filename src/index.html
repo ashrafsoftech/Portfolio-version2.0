@@ -1,93 +1,68 @@
-<section className="main-hero">
-  <div className="hero-wrapper">
-    <div className="sidebar">
-      <a target="_blank" href="https://github.com/ashrafsoftech">
-        <img src="./github.svg" alt="github" />
-      </a>
-      <a target="_blank" href="#">
-        <img src="./linkedin.svg" alt="github" />
-      </a>
-      <a target="_blank" href="https://twitter.com/AsharfAriy44884">
-        <img src="./twitter.svg" alt="github" />
-      </a>
-      <a target="_blank" href="https://wa.me/234816892838">
-        <img src="./whatsapp.svg" alt="github" />
-      </a>
-    </div>
-
-    {/*
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <img
-          src="./webPictures.png"
-          class="d-block mx-lg-auto img-fluid"
-          alt="Bootstrap Themes"
-          width="700"
-          height="500"
-          loading="lazy"
-        />
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">
-          Responsive left-aligned hero with image
-        </h1>
-        <p class="lead">
-          Quickly design and customize responsive mobile-first sites with
-          Bootstrap, the world’s most popular front-end open source toolkit,
-          featuring Sass variables and mixins, responsive grid system, extensive
-          prebuilt components, and powerful JavaScript plugins.
-        </p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">
-            Primary
-          </button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4">
-            Default
-          </button>
-        </div>
-      </div>
-    </div>
-    */} {/*
-    <div className="hero-content container ">
-      <div
-        className=" row p-4 pb-0 pe-lg-0 pt-lg-3  rounded-3 border shadow bg-white"
-      >
-        <div className="text-container col-sm-7 p-2 p-lg-5 pt-lg-3 bg-white">
-          <h1 className="display-6 fw-bold lh-1 text-body-emphasis bg-white">
-            HEY, I'M ASHRAF
-          </h1>
-          <p className="lead bg-white">
-            Quickly design and customize responsive mobile-first sites with
-            Bootstrap, the world’s most popular front-end open source toolkit,
-            featuring Sass variables and mixins,
-          </p>
-          <div
-            className="button-container d-grid gap-2 d-sm-flex justify-content-md-start mb-lg-0 bg-white"
-          >
-            <button
-              type="button"
-              className="btn btn1 btn-primary btn-lg fw-bold"
-            >
-              view projects
-            </button>
-            <button
-              type="button"
-              className="btn btn2 btn-outline-secondary btn-lg"
-            >
-              check out my blog
-            </button>
-          </div>
-        </div>
-
-        <img className="subimg" src="./webPictures.png" alt="" />
-
-        <div
-          className="img-container col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg bg-white rounded-3"
+import Home from "./components/Home"; function App() { return (
+<div>
+  {/* NAV */}
+  <nav className="navbar navbar-expand-sm navbar-light bg-light mb-sm-4 mb-2">
+    <div
+      className="container-fluid d-flex align-items-center justify-content-between"
+    >
+      <div className="d-flex align-items-center">
+        <a
+          href="/"
+          className="d-flex align-items-center text-decoration-none bg-white"
         >
-          <img className="rounded-3 bg-white" src="./webPictures.png" alt="" />
-        </div>
+          <img
+            src="./profile2.jpg"
+            alt=""
+            className="bg-white"
+            width="50"
+            height="50"
+          />
+        </a>
+
+        <h1 className="m-0 ms-2">
+          <a className="navbar-brand bg-white" href="/"> Ashraf Softech </a>
+        </h1>
+      </div>
+
+      <button
+        className="navbar-toggler ms-auto"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarsExample03"
+        aria-controls="navbarsExample03"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon bg-white"></span>
+      </button>
+
+      <div
+        className="collapse navbar-collapse bg-white justify-content-end ms-auto"
+        id="navbarsExample03"
+      >
+        <ul className="navbar-nav ms-auto mb-2 mb-sm-0">
+          <li className="nav-item bg-white">
+            <a className="nav-link active" aria-current="page" href="/">
+              Home
+            </a>
+          </li>
+          <li className="nav-item bg-white">
+            <a className="nav-link" href="./components/Project.jsx">
+              Project
+            </a>
+          </li>
+          <li className="nav-item bg-white">
+            <a className="nav-link" href="./components/About.jsx"> About </a>
+          </li>
+          <li className="nav-item bg-white">
+            <a className="nav-link" href="./components/Contact.jsx">
+              Contact
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
-    */}
-  </div>
-</section>
+  </nav>
+  <Home />
+</div>
+); } export default App;
