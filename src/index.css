@@ -1,6 +1,6 @@
 /* ============= PROJECT CSS =============== */
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&display=swap");
-*,
+
 body {
   font-family: system-ui, sans-serif;
   background-color: #e2e8f0;
@@ -18,19 +18,18 @@ nav img {
 
 .home-body {
   width: 100%;
+  min-height: 70vh;
   height: auto;
   overflow: hidden;
   position: relative;
   display: flex;
-  border: 1px solid;
 }
 
 .sidebar {
-  position: relative;
+  position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  margin-left: -1em;
 
   width: 3rem;
   height: 14em;
@@ -55,18 +54,17 @@ nav img {
 }
 
 .hero-container {
+  background-color: white !important;
+  border-radius: 1em;
+  margin: 0 0.5rem 0 2.5em; /* ✔ adds equal left and right space */
   position: relative;
-  left: 0em;
-  border: 1px solid;
-  align-items: center;
   text-align: center;
 }
+
 .hero {
-  border: 1px solid;
   height: 100%;
 }
 .hero-img {
-  border: 1px solid;
   height: 100%;
   align-items: center;
 }
@@ -76,23 +74,39 @@ nav img {
   overflow: hidden;
 }
 @media screen and (max-width: 576px) {
-  .hero {
-    border: 1px solid;
-    width: 100%;
-  }
-  .hero-img {
-    border: 1px solid;
-    width: 100%;
-  }
-}
-@media screen and (max-width: 320px) {
   .sidebar {
     display: none;
   }
+  .hero-container {
+    position: relative;
+    left: 0rem;
+    margin: 0;
+  }
+  .hero {
+    width: 100%;
+  }
+  .hero-img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 426px) {
   .hero h1 {
     font-size: 1.5em;
   }
   .hero p {
     font-size: 1em;
+  }
+  .hero-img {
+    display: none;
+  }
+}
+@media screen and (max-width: 371px) {
+  .button-container {
+    display: grid;
+grid-template-columns: 1fr 1fr;
+  }
+  .button-container button{
+    
+    font-size: 14px;
   }
 }

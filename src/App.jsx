@@ -2,7 +2,7 @@ function App() {
   return (
     <div>
       {/* NAV */}
-      <nav className="navbar navbar-expand-sm navbar-light bg-light">
+      <nav className="navbar navbar-expand-sm navbar-light bg-light mb-sm-4 mb-2">
         <div className="nav-content container-fluid">
           <a
             href="/"
@@ -76,7 +76,7 @@ function App() {
           </a>
         </div>
 
-        <div className="hero-container d-sm-flex d-grid">
+        <div className="hero-container d-sm-flex d-grid bg-white shadow">
           <div className="hero col-sm-6 col-7 text-container p-3">
             <h3>HEY, I'M ASHRAF - FrontEnd Developer</h3>
             <p>
