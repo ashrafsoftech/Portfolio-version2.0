@@ -9,11 +9,49 @@ body {
   background-color: #e2e8f0;
   font-family: "Poppins", sans-serif;
 }
+/* Default light theme */
+body {
+  background-color: #e2e8f0;
+  color: #2e2e2e;
+}
+
+/* Dark mode styles */
+.dark-mode {
+  background-color: #121212 !important;
+  color: #f5f5f5 !important;
+}
+
+.dark-mode .navbar {
+  background-color: #1f1f1f !important;
+}
+
+.dark-mode .nav-link {
+  color: #f5f5f5 !important;
+}
+
+.dark-mode .hero-container {
+  background-color: #1f1f1f !important;
+  color: #f5f5f5;
+}
+
+.dark-mode .sidebar {
+  background-color: #1f1f1f !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .profile-ring::before {
+  border-top-color: #3aa6ff;
+  border-right-color: #ff4a4a;
+  border-bottom-color: #ffd700;
+}
 
 h3 {
   font-family: "Sora", sans-serif;
   /* font-family: "Montserrat", sans-serif; */
   font-weight: 800;
+}
+.navbar-nav {
+  flex-wrap: nowrap;
 }
 
 .navbar {
@@ -24,6 +62,7 @@ h3 {
   /* font-family: 'Protest Riot', cursive; */
   font-weight: 500;
   font-size: 0.8em;
+  transition: text-shadow 0.3s ease;
 }
 .nav-content {
   background-color: white !important;
@@ -31,10 +70,9 @@ h3 {
 nav img {
   border-radius: 4em !important;
 }
-
 nav li {
   font-family: "Inter", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.05rem;
   color: #2e2e2e;
 }
@@ -43,29 +81,25 @@ nav li {
   position: relative;
   text-decoration: none !important;
 }
-
 /* Custom underline (only underline) */
 .nav-link::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -3px;
+  bottom: 5px;
   width: 0%;
-  height: 3px; /* thickness */
+  height: 2px; /* thickness */
   background-color: black;
   transition: width 0.35s ease;
 }
-
 /* Hover underline */
 .nav-link:hover::after {
   width: 100%;
 }
-
 /* Active (current page) underline */
 .nav-link.active::after {
   width: 100%;
 }
-
 /* Remove text-decoration completely (important!) */
 .nav-link.active,
 .nav-link:hover {
@@ -88,7 +122,6 @@ nav li {
   width: 28px;
   height: 28px;
 }
-
 .profile-ring {
   width: 55px;
   height: 55px;
@@ -98,25 +131,74 @@ nav li {
   justify-content: center;
   align-items: center;
 }
-
-.profile-ring::before {
+/* .profile-ring::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 4px solid transparent;
-  border-top-color: #3aa6ff; /* blue */
-  border-right-color: #ff4a4a; /* red */
-  border-bottom-color: #7a5a00; /* gold */
+  border: 2px solid transparent;
+  border-top-color: #3aa6ff;
+  border-right-color: #ff4a4a; 
+  border-bottom-color: #7a5a00; 
   border-left-color: transparent;
-}
 
+   animation: rotateRing 10s linear infinite; 
+  
+
+} */
+.profile-ring::before {
+  content: "";
+  position: absolute;
+  inset: 1px; /* thickness around the image */
+  border-radius: 50%;
+  background: conic-gradient(
+    /* BLUE segment */ #3aa6ff 0deg 100deg,
+    transparent 100deg 120deg,
+
+    /* RED segment */ #ff4a4a 120deg 220deg,
+    transparent 220deg 240deg,
+
+    /* GOLD segment */ #7a5a00 240deg 340deg,
+    transparent 340deg 360deg
+  );
+
+  /* Create hollow ring */
+  -webkit-mask: radial-gradient(circle, transparent 66%, black 67%);
+  mask: radial-gradient(circle, transparent 66%, black 67%);
+
+  animation: rotateRing 10s linear infinite;
+}
+.profile-ring:hover::before {
+  animation: rotateRingReverse 4s linear infinite;
+}
 .ring-img {
   width: 42px;
   height: 42px;
   border-radius: 50%;
   object-fit: cover;
 }
+@keyframes rotateRing {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateRingReverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/*
+=============== 
+HOME
+===============
+*/
 
 .home-body {
   width: 100%;
@@ -127,6 +209,7 @@ nav li {
   display: flex;
 }
 
+/* ------SIDEBAR------ */
 .sidebar {
   position: absolute;
   left: 0;
@@ -154,18 +237,75 @@ nav li {
   background: transparent;
   width: 1.2em;
 }
+.sidebar a img {
+  transition: transform 0.25s ease, filter 0.3s ease;
+}
+.sidebar a:hover img {
+  transform: scale(1.25);
+  filter: drop-shadow(0 0 6px rgba(0, 132, 255, 0.5));
+}
 
+/* ------HEROCONTAINER------ */
 .hero-container {
   background-color: white !important;
   border-radius: 1em;
-  margin: 0 0.5rem 0 2.5em; /* ✔ adds equal left and right space */
+  margin: 0 0.5rem 0 2.5em;
   position: relative;
   text-align: center;
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
 }
-
+/* .hero-container:hover {
+  box-shadow: 0 0 35px rgba(0, 132, 255, 0.18),
+    0 0 10px rgba(255, 255, 255, 0.05);
+  transform: translateY(-5px);
+}  */
+/*animation added */
 .hero {
   height: 100%;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.8s ease forwards;
 }
+
+.btn-primary {
+  transition: transform 1.4s ease, box-shadow 0.9s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 132, 255, 0.3);
+}
+
+.btn-outline-secondary {
+  transition: transform 1.4s ease, border-color 1s ease;
+}
+
+.btn-outline-secondary:hover {
+  transform: translateY(-3px);
+}
+
+@keyframes fadeSlideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-img img {
+  animation: zoomIn 1.2s ease forwards;
+  opacity: 0;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 .hero-img {
   height: 100%;
   align-items: center;
@@ -175,6 +315,9 @@ nav li {
   padding: 0;
   overflow: hidden;
 }
+
+/* ------RESPONSIVE------ */
+
 @media screen and (max-width: 576px) {
   .sidebar {
     display: none;
@@ -192,6 +335,9 @@ nav li {
   }
 }
 @media screen and (max-width: 426px) {
+  .navbar-brand {
+    font-size: 1.3rem !important;
+  }
   .hero h1 {
     font-size: 1.5em;
   }
@@ -202,7 +348,30 @@ nav li {
     display: none;
   }
 }
-@media screen and (max-width: 371px) {
+@media screen and (max-width: 388px) {
+  nav .navbar-brand {
+    font-family: "Agbalumo", sans-serif;
+    /* font-family: 'Protest Riot', cursive; */
+    font-weight: 500;
+    font-size: 0.65em !important;
+    transition: text-shadow 0.3s ease;
+  }
+  nav .navbar-toggler {
+    font-size: 1em;
+  }
+  nav .ring-img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  nav .profile-ring,
+  .sun-icon-wrapper {
+    width: 3rem;
+    height: 3rem;
+  }
+  .profile-ring::before {
+    inset: 3px; /* thickness around the image */
+  }
   .button-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -210,4 +379,6 @@ nav li {
   .button-container button {
     font-size: 14px;
   }
+}
+@media screen and (max-width: 388px) {
 }

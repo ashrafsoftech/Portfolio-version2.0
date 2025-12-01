@@ -3,19 +3,37 @@ import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
+import { useState, useEffect } from "react";
 import { Routes, Route, NavLink } from "react-router-dom";
 import Home from "./components/Home";
+import Blog from "./components/Blog";
 import Project from "./components/Project";
 import About from "./components/About";
 import Contact from "./components/Contact";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Optional: persist theme across reloads
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("darkMode");
+    if (savedTheme) setDarkMode(JSON.parse(savedTheme));
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", darkMode);
+    document.body.className = darkMode ? "dark-mode" : "";
+  }, [darkMode]);
+
+  const toggleTheme = () => {
+    setDarkMode(!darkMode);
+  };
   return (
     <div>
-      <nav className="navbar navbar-expand-sm navbar-light bg-light mb-sm-4 mb-2">
-        <div className="container-fluid d-flex align-items-center justify-content-between">
-          {/* LEFT SIDE BRAND */}
-          <div className="d-flex align-items-center">
+      <nav className="navbar navbar-expand-md navbar-light bg-light mb-sm-4 mb-2">
+        <div className="container-fluid nav-content">
+          {/* LEFT — BRAND */}
+          <div className="d-flex align-items-center flex-grow-1 flex-md-grow-0">
             <h1 className="m-0">
               <NavLink className="navbar-brand bg-white" to="/">
                 Ashraf Softech
@@ -23,58 +41,51 @@ function App() {
             </h1>
           </div>
 
-          {/* PROFILE ICON — ALWAYS VISIBLE */}
-          <div className="d-flex align-items-center order-sm-3 ms-3">
-            <div className="profile-ring">
-              <img src="./profile2.jpg" className="ring-img" alt="profile" />
+          {/* RIGHT — ICONS (still beside toggler on mobile) */}
+          <div className="d-flex align-items-center gap-sm-3 gap-1 ms-auto order-md-3">
+            <div className="sun-icon-wrapper" onClick={toggleTheme}>
+              <img
+                src={darkMode ? "./moon.svg" : "./sun.svg"}
+                alt="theme"
+                className="sun-icon"
+
+              />
             </div>
+
+            <div className="profile-ring">
+              <img className="ring-img" src="./profile.jpg" />
+            </div>
+            {/* TOGGLER — stays far right */}
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+            >
+              <span className="navbar-toggler-icon"></span>
+            </button>
           </div>
 
-          {/* NAV TOGGLER */}
-          <button
-            className="navbar-toggler order-sm-2"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarsExample03"
-          >
-            <span className="navbar-toggler-icon bg-white"></span>
-          </button>
-
-          {/* COLLAPSIBLE NAV MENU */}
+          {/* CENTER — NAV LINKS */}
           <div
-            className="collapse navbar-collapse bg-white justify-content-end order-sm-1"
-            id="navbarsExample03"
+            className="collapse navbar-collapse justify-content-center order-md-2"
+            id="navbarNav"
           >
-            <ul className="navbar-nav ms-auto mb-2 mb-sm-0 align-items-center">
-              <li className="nav-item bg-white">
-                <NavLink to="/" className="nav-link">
-                  Home
-                </NavLink>
+            <ul className="navbar-nav gap-3">
+              <li className="nav-item">
+                <a className="nav-link active">Home</a>
               </li>
-
-              <li className="nav-item bg-white">
-                <NavLink to="/project" className="nav-link">
-                  Project
-                </NavLink>
+              <li className="nav-item">
+                <a className="nav-link">Project</a>
               </li>
-
-              <li className="nav-item bg-white">
-                <NavLink to="/about" className="nav-link">
-                  About
-                </NavLink>
+              <li className="nav-item">
+                <a className="nav-link">Blog</a>
               </li>
-
-              <li className="nav-item bg-white">
-                <NavLink to="/contact" className="nav-link">
-                  Contact
-                </NavLink>
+              <li className="nav-item">
+                <a className="nav-link">About</a>
               </li>
-
-              {/* SUN ICON — collapses with menu */}
-              <li className="nav-item bg-white ms-3">
-                <div className="sun-icon-wrapper">
-                  <img src="./sun.svg" alt="theme" className="sun-icon" />
-                </div>
+              <li className="nav-item">
+                <a className="nav-link">Contact</a>
               </li>
             </ul>
           </div>
@@ -84,6 +95,7 @@ function App() {
       {/* ROUTING */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/project" element={<Project />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
