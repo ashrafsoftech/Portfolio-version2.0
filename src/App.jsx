@@ -48,7 +48,6 @@ function App() {
                 src={darkMode ? "./moon.svg" : "./sun.svg"}
                 alt="theme"
                 className="sun-icon"
-
               />
             </div>
 
@@ -73,19 +72,29 @@ function App() {
           >
             <ul className="navbar-nav gap-3">
               <li className="nav-item">
-                <a className="nav-link active">Home</a>
+                <NavLink to="/" className="nav-link">
+                  Home
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link">Project</a>
+                <NavLink to="/project" className="nav-link">
+                  Project
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link">Blog</a>
+                <NavLink to="/blog" className="nav-link">
+                  Blog
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link">About</a>
+                <NavLink to="/about" className="nav-link">
+                  About
+                </NavLink>
               </li>
               <li className="nav-item">
-                <a className="nav-link">Contact</a>
+                <NavLink to="/contact" className="nav-link">
+                  Contact
+                </NavLink>
               </li>
             </ul>
           </div>
