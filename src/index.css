@@ -7,12 +7,11 @@
 body {
   font-family: system-ui, sans-serif;
   background-color: #e2e8f0;
+  color: #2e2e2e; /* Default light theme */
   font-family: "Poppins", sans-serif;
 }
-/* Default light theme */
-body {
-  background-color: #e2e8f0;
-  color: #2e2e2e;
+html {
+  scroll-behavior: smooth;
 }
 
 /* Dark mode styles */
@@ -320,6 +319,42 @@ HOME
 }
 
 /* ------RESPONSIVE------ */
+/* ============================
+   MOBILE NAV — background highlight
+   ============================ */
+@media (max-width: 768px) {
+  /* Remove underline completely */
+  .nav-link::after {
+    display: none !important;
+  }
+
+  /* Give mobile nav a clickable block feel */
+  .navbar-nav .nav-link {
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    width: 100%;
+  }
+
+  /* Hover effect */
+  .navbar-nav .nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.07);
+  }
+
+  /* Active route highlight */
+  .navbar-nav .nav-link.active {
+    background-color: rgba(0, 0, 0, 0.13);
+    font-weight: 700;
+  }
+
+  /* Dark mode version */
+  .dark-mode .navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .dark-mode .navbar-nav .nav-link.active {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+  }
+}
 
 @media screen and (max-width: 576px) {
   .sidebar {

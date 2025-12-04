@@ -1,6 +1,9 @@
+import "../componenetsCSS/project.css";
 const Project = () => {
   return (
-    <div>Project</div>
-  )
-}
-export default Project
+    <>
+      <div className="project">Project</div>
+    </>
+  );
+};
+export default Project;
