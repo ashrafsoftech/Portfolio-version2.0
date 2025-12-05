@@ -7,7 +7,7 @@ import "@fontsource/inter/700.css";
 import { useState, useEffect } from "react";
 
 import Home from "./components/Home";
-import Blog from "./components/Blog";
+
 import Project from "./components/Project";
 import About from "./components/About";
 import Contact from "./components/Contact";
@@ -81,10 +81,11 @@ function App() {
                 </a>
               </li>
               <li className="nav-item">
-                <a href="#blog" className="nav-link">
-                  Blog
+                <a href="#about-skills" className="nav-link">
+                  Skills
                 </a>
               </li>
+
               <li className="nav-item">
                 <a href="#about" className="nav-link">
                   About
@@ -107,12 +108,11 @@ function App() {
       <section id="project">
         <Project />
       </section>
-      <section id="blog">
-        <Blog />
-      </section>
+
       <section id="about">
         <About />
       </section>
+
       <section id="contact">
         <Contact />
       </section>

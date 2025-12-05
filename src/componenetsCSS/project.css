@@ -1,3 +1,30 @@
-.project{
-    background-color: red;
+.overlay-card {
+  position: relative;
+  overflow: hidden;
 }
+
+.overlay-card img {
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+  display: block;
+}
+
+/* The dark overlay */
+.overlay-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 225px;
+  background: rgba(0, 0, 0, 0.4); /* Adjust darkness here */
+  z-index: 1;
+}
+
+/* Make sure content sits above overlay */
+.overlay-card .card-body {
+  position: relative;
+  z-index: 2;
+}
+
