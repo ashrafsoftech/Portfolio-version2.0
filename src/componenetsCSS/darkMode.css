@@ -1,0 +1,174 @@
+/* 
+.dark-mode {
+  background-color: #121212 !important;
+  color: #f5f5f5 !important;
+}
+.dark-mode .nav-content {
+  background-color: #1f1f1f !important;
+}
+.dark-mode .navbar,
+.dark-mode .navbar a {
+  background-color: #1f1f1f !important;
+  color: #f5f5f5 !important;
+}
+.dark-mode .nav-link::after {
+  background-color: white;
+}
+.dark-mode .nav-link {
+  background-color: #1f1f1f;
+  color: #f5f5f5 !important;
+}
+
+
+.dark-mode .hero-container {
+  background-color: #1f1f1f !important;
+  color: #f5f5f5;
+}
+
+.dark-mode .sidebar {
+  background-color: #1f1f1f !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .profile-ring::before {
+  border-top-color: #3aa6ff;
+  border-right-color: #ff4a4a;
+  border-bottom-color: #ffd700;
+}
+
+.dark-mode .project{
+    background-color: #121212 !important;
+}
+.dark-mode .project .project-hero p{
+    color: #f5f5f5 !important;
+} */
+
+/* DARK MODE GLOBAL */
+.dark-mode {
+  background-color: #000319 !important; /* Deep navy */
+  color: #e6edf3 !important; /* Soft light text */
+}
+
+/* Navbar & Containers */
+.dark-mode .nav-content,
+.dark-mode .navbar {
+  background-color: #000319 !important; /* Slightly lighter */
+  color: #e6edf3 !important;
+}
+.dark-mode .navbar-brand {
+  background-color: #000319 !important;
+  color: #e6edf3 !important;
+}
+.dark-mode .navbar,
+.dark-mode .navbar a {
+  color: #f5f5f5 !important;
+}
+/* Sidebar */
+.dark-mode .sidebar {
+  background-color: #000319 !important;
+  box-shadow: 0 0 10px rgba(0, 153, 255, 0.1);
+  border: 1px solid #192338;
+}
+
+/* Hero & Project Card Section */
+.dark-mode .hero-container,
+.dark-mode .card {
+  background-color: #000319 !important;
+  color: #e6edf3;
+  border: 1px solid #192338 !important;
+}
+.dark-mode .project {
+  background-color: #000319 !important;
+  color: #e6edf3 !important;
+}
+.dark-mode .project p {
+  color: #e6edf3 !important;
+}
+.dark-mode .project .card {
+  border: 1px solid #192338 !important;
+  color: #e6edf3 !important;
+}
+.dark-mode .card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 2px solid transparent;
+}
+
+/* MOVING BORDER LINE */
+.dark-mode .about .bio .card {
+  position: relative;
+  overflow: hidden;
+}
+
+.dark-mode .about .bio .card::before {
+  content: "";
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(90deg, #00eaff, #007bff);
+  animation: moveBorder 3s linear infinite;
+}
+
+@keyframes moveBorder {
+  0% {
+    top: 0;
+    left: -100%;
+  }
+  25% {
+    top: 0;
+    left: 100%;
+  }
+  50% {
+    top: 100%;
+    left: 100%;
+  }
+  75% {
+    top: 100%;
+    left: -100%;
+  }
+  100% {
+    top: 0;
+    left: -100%;
+  }
+}
+
+.dark-mode .card:hover {
+  box-shadow: 0 0 12px rgba(0, 153, 255, 0.4);
+}
+
+.dark-mode .about {
+  background-color: #000319 !important;
+}
+.dark-mode .about .card {
+  background-color: #000319 !important;
+  color: #ffffff !important;
+}
+.dark-mode .about .card p {
+  color: white !important;
+}
+.dark-mode .about .skills button {
+  background-color: #000319 !important;
+  color: white !important;
+}
+
+.dark-mode .contact {
+  background-color: #000319 !important;
+}
+.dark-mode .contact .profile-card {
+  background-color: #000319 !important;
+  border: 1px solid #192338;
+}
+.dark-mode .contact .profile-card:hover {
+  background-color: #000319 !important;
+  box-shadow: 0 0 12px rgba(0, 153, 255, 0.4);
+}
+.dark-mode .contact .profile-card p {
+  color: white !important;
+}
+
+.dark-mode .contact form input, .dark-mode .contact form textarea{
+  background-color: rgb(237, 234, 234);
+}

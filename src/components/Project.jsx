@@ -1,8 +1,8 @@
 import "../componenetsCSS/project.css";
 const Project = () => {
   return (
-    <main className="mt-3 bg-body-tertiary">
-      <section className="text-center bg-body-tertiary">
+    <main className="project mt-3 bg-body-tertiary">
+      <section className="project-hero text-center ">
         <div className="container">
           <div className="row py-3">
             <div className="col-lg-6 col-md-8 mx-auto">
@@ -16,7 +16,7 @@ const Project = () => {
         </div>
       </section>
 
-      <div className="album py-2 bg-body-tertiary">
+      <div className="album py-2 ">
         <div className="container">
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
             {/* 1st project */}

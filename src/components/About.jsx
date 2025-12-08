@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "../componenetsCSS/about.css";
 const About = () => {
   return (
@@ -13,7 +14,7 @@ const About = () => {
                 My name is
                 <span className="fw-bold"> Ariyibi Ashraf </span>, and I’m a
                 front-end developer with a strong foundation in HTML, CSS,
-                JavaScript, React, and Bootstrap. I originally studied{" "}
+                JavaScript, React, and Bootstrap. I originally studied
                 <span className="fw-bold">
                   Materials and Metallurgical Engineering
                 </span>
@@ -36,26 +37,28 @@ const About = () => {
               className="skills card shadow-sm border-0 p-4 h-100 col-lg-12 col-md-6 text-center"
             >
               <div>
-                <h5 className="fw-bold mb-3">Front-End Development</h5>
+                <h5 className="fw-bold mb-3">My Skills</h5>
 
                 <div className="skills-buttons d-flex flex-wrap justify-content-center gap-2 mb-4">
                   <button className="skill-btn">
-                    <i className="bi bi-code-slash me-1"></i> HTML5
+                    <img src="/skillIcons/html.svg" alt="html" /> HTML5
                   </button>
                   <button className="skill-btn">
-                    <i className="bi bi-palette me-1"></i> CSS3
+                    <img src="/skillIcons/css.png" alt="css" /> CSS3
                   </button>
                   <button className="skill-btn">
-                    <i className="bi bi-lightning me-1"></i> JavaScript (ES6+)
+                    <img src="/skillIcons/js.png" alt="JS" /> JavaScript (ES6+)
                   </button>
                   <button className="skill-btn">
-                    <i className="bi bi-react me-1"></i> React
+                    <img src="/skillIcons/react.png" alt="react" /> React
                   </button>
                   <button className="skill-btn">
-                    <i className="bi bi-window-sidebar me-1"></i> Bootstrap
+                    <img src="/skillIcons/bootstrap.jpeg" alt="bootstrap" />
+                    Bootstrap
                   </button>
                   <button className="skill-btn">
-                    <i className="bi bi-phone me-1"></i> Responsive Design
+                    <img src="/skillIcons/responsive.png" alt="responsive" />
+                    Responsive Design
                   </button>
                 </div>
               </div>
@@ -67,20 +70,24 @@ const About = () => {
 
                 <div className="skills-buttons d-flex flex-wrap justify-content-center gap-2">
                   <button className="skill-btn">
-                    <i className="bi bi-server me-1"></i> Backend Development
+                    <img src="/skillIcons/backend.jpeg" alt="backend" />
+                    Backend Development
                   </button>
                   <button className="skill-btn">
-                    <i className="bi bi-node-plus me-1"></i> Node.js / Express
+                    <img src="/skillIcons/node.png" alt="node" /> Node.js /
+                    Express
                   </button>
                   <button className="skill-btn">
-                    <i className="bi bi-database me-1"></i> MongoDB
+                    <img src="/skillIcons/mongoDB.png" alt="mongoDB" />
+                    MongoDB
                   </button>
                   <button className="skill-btn">
-                    <i className="bi bi-archive me-1"></i> PostgreSQL
+                    <img src="/skillIcons/postgresql.png" alt="postgresql" />
+                    PostgreSQL
                   </button>
                   <button className="skill-btn">
-                    <i className="bi bi-diagram-2 me-1"></i> Full-Stack
-                    Workflows
+                    <img src="/skillIcons/fullstack.jpeg" alt="fullstack" />
+                    Full-Stack Workflows
                   </button>
                 </div>
               </div>

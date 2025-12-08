@@ -15,34 +15,7 @@ html {
 }
 
 /* Dark mode styles */
-.dark-mode {
-  background-color: #121212 !important;
-  color: #f5f5f5 !important;
-}
 
-.dark-mode .navbar {
-  background-color: #1f1f1f !important;
-}
-
-.dark-mode .nav-link {
-  color: #f5f5f5 !important;
-}
-
-.dark-mode .hero-container {
-  background-color: #1f1f1f !important;
-  color: #f5f5f5;
-}
-
-.dark-mode .sidebar {
-  background-color: #1f1f1f !important;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-}
-
-.dark-mode .profile-ring::before {
-  border-top-color: #3aa6ff;
-  border-right-color: #ff4a4a;
-  border-bottom-color: #ffd700;
-}
 
 h3 {
   font-family: "Sora", sans-serif;

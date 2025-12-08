@@ -29,12 +29,16 @@ const Home = () => {
             needs at the center of every decision.
           </p>
           <div className="button-container d-sm-flex gap-2 d-grid px-sm-0 px-3">
-            <button type="button" className="btn btn-primary">
+            <a href="#project" type="button" className="btn btn-primary">
               view projects
-            </button>
-            <button type="button" className="btn btn-outline-secondary">
-              check out my blog
-            </button>
+            </a>
+            <a
+              href="#about"
+              type="button"
+              className="btn btn-outline-secondary"
+            >
+              learn more
+            </a>
           </div>
         </div>
 

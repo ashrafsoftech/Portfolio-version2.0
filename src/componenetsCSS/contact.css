@@ -1,0 +1,188 @@
+.contact {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  padding-top: 4rem;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+}
+
+.profile-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+
+.profile-img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.contact-text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  max-width: 600px;
+  margin: auto;
+}
+
+.contact-text a {
+  color: #1d72f3;
+}
+
+.social-title {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.social-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 0.8rem;
+}
+
+.social-row a {
+  background: #f4f4f4;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.social-row a:hover {
+  background: #1d72f3;
+  color: white;
+}
+
+.form-title {
+  font-size: 25px;
+  margin-bottom: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.send-btn {
+  padding: 14px;
+  background: #1d72f3;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.send-btn:hover {
+  background: #165ac8;
+}
+
+.status {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #444;
+}
+
+/* --- Fade In --- */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Smooth floating animation */
+@keyframes profileFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Soft glow pulse */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 0px rgba(29, 114, 243, 0);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(29, 114, 243, 0.25);
+  }
+  100% {
+    box-shadow: 0 0 0px rgba(29, 114, 243, 0);
+  }
+}
+
+.profile-img {
+  width: 10em;
+  height: 10em;
+  opacity: 0;
+  transform: scale(0.85);
+  transition: transform 1s ease, opacity 1s ease;
+  animation: profileFloat 4s ease-in-out infinite,
+    glowPulse 3.5s ease-in-out infinite;
+}
+.reveal.active.profile-img {
+  opacity: 1;
+  transform: scale(1);
+}
+
+button {
+  transition: background 0.3s ease, opacity 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.social-row a {
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

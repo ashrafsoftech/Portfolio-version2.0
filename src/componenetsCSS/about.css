@@ -1,11 +1,3 @@
-
-
-.skills div {
- 
-}
-.skills {
-  
-}
 .about p,
 .about li {
   font-size: 1em !important;
@@ -47,5 +39,17 @@
 
 .skills-buttons {
   margin-bottom: 1rem;
+}
+
+.skills-buttons img {
+  width: 2em;
+}
+
+.journey p {
+  margin-top: 1em;
+  line-height: 2em;
+  font-family: "Montserrat", cursive;
+  text-align: left;
+  word-spacing: .1em;
 }
 
