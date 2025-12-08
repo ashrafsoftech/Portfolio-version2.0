@@ -48,7 +48,7 @@ const Contact = () => {
 
       <img src="./profile.jpg" alt="profile" className="profile-img reveal" />
 
-      <div className="profile-card reveal">
+      <div className="profile-card  reveal container-sm">
         <p className="contact-text">
           I'm currently taking on freelance work. If you're interested in
           working with me, use the form below. Want to know more? Check my{" "}
@@ -79,7 +79,7 @@ const Contact = () => {
 
       <h2 className="form-title reveal">Get In Touch</h2>
 
-      <form className="contact-form reveal" onSubmit={sendMessage}>
+      <form className="contact-form reveal container-sm" onSubmit={sendMessage}>
         <input type="text" name="user_name" placeholder="Name" required />
         <input type="email" name="user_email" placeholder="Email" required />
         <textarea

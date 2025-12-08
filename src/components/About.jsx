@@ -6,7 +6,7 @@ const About = () => {
       <div className="container-lg">
         <h1 className="fw-bold text-center">About Me</h1>
 
-        <div className="row mt-5 gap-lg-0 gap-sm-2">
+        <div className="row mt-5 gap-lg-0 gap-2">
           {/* BIO CARD */}
           <div className="bio col-lg-8 d-lg-grid d-sm-flex d-grid gap-2">
             <div className="card shadow-sm border-0 p-4 h-100 col-lg-12 col-md-6 col-sm-6">
@@ -16,7 +16,7 @@ const About = () => {
                 front-end developer with a strong foundation in HTML, CSS,
                 JavaScript, React, and Bootstrap. I originally studied
                 <span className="fw-bold">
-                  Materials and Metallurgical Engineering
+                   Materials and Metallurgical Engineering
                 </span>
                 , but limited opportunities in the field led me to explore web
                 development — a decision that changed my career path completely.

@@ -53,3 +53,8 @@
   word-spacing: .1em;
 }
 
+@media screen and (max-width: 990px){
+  .journey {
+    margin: auto;
+  }
+}
