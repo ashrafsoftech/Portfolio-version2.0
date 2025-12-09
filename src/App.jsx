@@ -11,6 +11,7 @@ import Home from "./components/Home";
 import Project from "./components/Project";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import BackToTop from "./components/BackToTop";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -26,6 +27,22 @@ function App() {
   }, [darkMode]);
 
   const toggleTheme = () => setDarkMode(!darkMode);
+  useEffect(() => {
+    const navbar = document.querySelector(".navbar");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            navbar.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(navbar);
+  }, []);
 
   return (
     <div>
@@ -116,6 +133,9 @@ function App() {
       <section id="contact">
         <Contact />
       </section>
+
+      {/* BACK TO TOP BUTTON */}
+      <BackToTop />
     </div>
   );
 }

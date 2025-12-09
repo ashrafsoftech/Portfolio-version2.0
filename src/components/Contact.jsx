@@ -51,8 +51,8 @@ const Contact = () => {
       <div className="profile-card  reveal container-sm">
         <p className="contact-text">
           I'm currently taking on freelance work. If you're interested in
-          working with me, use the form below. Want to know more? Check my{" "}
-          <a href="#project">projects</a> and{" "}
+          working with me, use the form <a href="#form">below</a> . Want to know
+          more? Check my <a href="#project">projects</a> and{" "}
           <a target="blank" href="#resume">
             resume
           </a>
@@ -76,25 +76,29 @@ const Contact = () => {
           </a>
         </div>
       </div>
+      <div id="form">
+        <h2 className="form-title reveal">Get In Touch</h2>
 
-      <h2 className="form-title reveal">Get In Touch</h2>
+        <form
+          className="contact-form reveal container-sm"
+          onSubmit={sendMessage}
+        >
+          <input type="text" name="user_name" placeholder="Name" required />
+          <input type="email" name="user_email" placeholder="Email" required />
+          <textarea
+            name="message"
+            placeholder="Enter your message"
+            rows="6"
+            required
+          ></textarea>
 
-      <form className="contact-form reveal container-sm" onSubmit={sendMessage}>
-        <input type="text" name="user_name" placeholder="Name" required />
-        <input type="email" name="user_email" placeholder="Email" required />
-        <textarea
-          name="message"
-          placeholder="Enter your message"
-          rows="6"
-          required
-        ></textarea>
+          <button type="submit" className="send-btn">
+            Send Message
+          </button>
 
-        <button type="submit" className="send-btn">
-          Send Message
-        </button>
-
-        <p className="status">{status}</p>
-      </form>
+          <p className="status">{status}</p>
+        </form>
+      </div>
     </section>
   );
 };

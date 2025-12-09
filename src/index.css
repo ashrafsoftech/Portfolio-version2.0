@@ -16,7 +16,6 @@ html {
 
 /* Dark mode styles */
 
-
 h3 {
   font-family: "Sora", sans-serif;
   /* font-family: "Montserrat", sans-serif; */
@@ -169,6 +168,28 @@ nav li {
   }
 }
 
+/* NAV reveal animation */
+.navbar {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.navbar.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.9s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /*
 =============== 
 HOME
@@ -185,6 +206,21 @@ HOME
 }
 
 /* ------SIDEBAR------ */
+ .sidebar-reveal {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  /* combine with reveal animation: start 40px lower than center */
+  transform: translateY(calc(-50% + 40px));
+  opacity: 0;
+  transition: transform 0.9s ease, opacity 0.9s ease;
+}
+
+.sidebar-reveal.active {
+  transform: translateY(-50%);
+  opacity: 1;
+}
+
 .sidebar {
   position: absolute;
   left: 0;

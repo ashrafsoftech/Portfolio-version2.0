@@ -1,4 +1,6 @@
 import "../componenetsCSS/project.css";
+import Reveal from "./Reveal";
+
 const Project = () => {
   return (
     <main className="project mt-3 bg-body-tertiary">
@@ -20,80 +22,83 @@ const Project = () => {
         <div className="container">
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-3">
             {/* 1st project */}
-            <div className="col">
-              <div className="card shadow-sm overlay-card">
-                <img src="../taskifysplash.png" alt="taskify" className="" />
-                <div className="card-body ">
-                  <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <div className="btn-group">
-                      <a
-                        href="https://taskify-2025.netlify.app"
-                        className="btn btn-sm btn-outline-secondary"
-                        target="_blank"
-                        
-                        rel="noopener noreferrer"
-                      >
-                        View
-                      </a>
+            <Reveal>
+              <div className="col">
+                <div className="card shadow-sm overlay-card">
+                  <img src="../taskifysplash.png" alt="taskify" className="" />
+                  <div className="card-body ">
+                    <p className="card-text">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div className="btn-group">
+                        <a
+                          href="https://taskify-2025.netlify.app"
+                          className="btn btn-sm btn-outline-secondary"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View
+                        </a>
 
-                      <a
-                        href="#"
-                        className="btn btn-sm btn-outline-secondary"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Comment
-                      </a>
+                        <a
+                          href="#"
+                          className="btn btn-sm btn-outline-secondary"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Comment
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
 
             {/* 2nd project */}
-            <div className="col">
-              <div className="card shadow-sm overlay-card">
-                <img src="../backroads.jpeg" alt="backroads" className="" />
-                <div className="card-body ">
-                  <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <div className="btn-group">
-                      <a
-                        href="https://my-backroad.netlify.app"
-                        className="btn btn-sm btn-outline-secondary"
-                        target="_blank"
-                        
-                        rel="noopener noreferrer"
-                      >
-                        View
-                      </a>
+            <Reveal>
+              <div className="col">
+                <div className="card shadow-sm overlay-card">
+                  <img src="../backroads.jpeg" alt="backroads" className="" />
+                  <div className="card-body ">
+                    <p className="card-text">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                    <div className="d-flex justify-content-between align-items-center">
+                      <div className="btn-group">
+                        <a
+                          href="https://my-backroad.netlify.app"
+                          className="btn btn-sm btn-outline-secondary"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          View
+                        </a>
 
-                      <a
-                        href="#"
-                        className="btn btn-sm btn-outline-secondary"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Comment
-                      </a>
+                        <a
+                          href="#"
+                          className="btn btn-sm btn-outline-secondary"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Comment
+                        </a>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </div>
     </main>
   );
 };
+
 export default Project;

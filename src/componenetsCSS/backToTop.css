@@ -1,0 +1,47 @@
+/* Keyframes for pulsing animation */
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1); /* slightly bigger */
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.back-to-top {
+  position: fixed;
+  top: 95%;           
+  left: 50%;          
+  transform: translate(-50%, -50%);
+  
+  background-color: #038bff;
+  color: white;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+  z-index: 1000;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+
+  /* Apply the pulsing animation */
+  animation: pulse 1s infinite;
+}
+
+.back-to-top:hover {
+  background-color: #0266cc;
+  transform: translate(-50%, -50%) scale(1.3); /* slightly bigger on hover */
+}
