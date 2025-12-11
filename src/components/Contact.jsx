@@ -1,31 +1,40 @@
 import "../componenetsCSS/contact.css";
 import React, { useState, useEffect } from "react";
-// import emailjs from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
-  const sendMessage = (e) => {
-    e.preventDefault();
-    setStatus("Sending...");
+ const sendMessage = (e) => {
+   e.preventDefault();
+   setLoading(true);
+   setStatus("");
 
-    emailjs
-      .sendForm(
-        "your_service_id",
-        "your_template_id",
-        e.target,
-        "your_public_key"
-      )
-      .then(
-        () => {
-          setStatus("Message sent successfully!");
-          e.target.reset();
-        },
-        () => {
-          setStatus("Something went wrong. Try again.");
-        }
-      );
-  };
+   emailjs
+     .sendForm(
+       "service_q2lmpbd",
+       "template_mihs37o",
+       e.target,
+       "e8ettnxBtUPFX_3Mc"
+     )
+     .then(
+       () => {
+         setLoading(false);
+         setShowPopup(true);
+         setStatus("Message sent successfully!");
+         e.target.reset();
+
+         setTimeout(() => setShowPopup(false), 2500); // hide popup
+       },
+       () => {
+         setLoading(false);
+         setStatus("Something went wrong. Try again.");
+       }
+     );
+ };
+
 
   useEffect(() => {
     const revealElements = document.querySelectorAll(".reveal");
@@ -76,6 +85,7 @@ const Contact = () => {
           </a>
         </div>
       </div>
+
       <div id="form">
         <h2 className="form-title reveal">Get In Touch</h2>
 
@@ -96,7 +106,16 @@ const Contact = () => {
             Send Message
           </button>
 
-          <p className="status">{status}</p>
+        
+
+          {loading && <div className="spinner"></div>}
+
+          {showPopup && (
+            <div className="success-popup">Message sent successfully! 🎉</div>
+          )}
+
+          <br />
+          <br />
         </form>
       </div>
     </section>
