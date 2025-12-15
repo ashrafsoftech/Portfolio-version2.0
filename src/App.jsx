@@ -46,7 +46,7 @@ function App() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-md navbar-light bg-light mb-sm-4 mb-2">
+      <nav className="navbar navbar-expand-md navbar-light bg-light mb-sm-0">
         <div className="container-fluid nav-content">
           {/* BRAND */}
           <div className="d-flex align-items-center flex-grow-1 flex-md-grow-0">

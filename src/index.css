@@ -1,4 +1,4 @@
-/* ============= PROJECT CSS =============== */
+/* ============= index.css =============== */
 
 @import url("https://fonts.googleapis.com/css2?family=Agbalumo&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap");
@@ -198,7 +198,8 @@ HOME
 
 .home-body {
   width: 100%;
-  min-height: 70vh;
+  min-height: auto;
+  padding-block: 2rem;
   height: auto;
   overflow: hidden;
   position: relative;
@@ -206,7 +207,7 @@ HOME
 }
 
 /* ------SIDEBAR------ */
- .sidebar-reveal {
+.sidebar-reveal {
   position: absolute;
   top: 50%;
   left: 0;
@@ -257,9 +258,19 @@ HOME
 }
 
 /* ------HEROCONTAINER------ */
+/* .home-section,
+.project-section,
+.about-section,
+.contact-section {
+  padding-block: 3rem;
+} */
+
 .hero-container {
   background-color: white !important;
   border-radius: 1em;
+  margin: 0 auto; /* center horizontally */
+  padding: 1rem; /* optional padding */
+  max-width: 1200px; /* optional for big screens */
   margin: 0 0.5rem 0 2.5em;
   position: relative;
   text-align: center;
@@ -332,6 +343,9 @@ HOME
    MOBILE NAV — background highlight
    ============================ */
 @media (max-width: 768px) {
+  .reveal {
+    transform: none;
+  }
   /* Remove underline completely */
   .nav-link::after {
     display: none !important;

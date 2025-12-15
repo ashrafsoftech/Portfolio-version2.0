@@ -27,8 +27,12 @@
   position: relative;
   z-index: 2;
 }
-
-
+.project-skills {
+  width: 22px !important;
+  height: 22px !important;
+ 
+  vertical-align: middle !important;
+}
 
 /* Project reveal animation */
 .reveal {
@@ -46,7 +50,18 @@
   transition-delay: 0s;
 }
 
-.row .reveal:nth-child(1) { transition-delay: 0.1s; }
-.row .reveal:nth-child(2) { transition-delay: 0.2s; }
-.row .reveal:nth-child(3) { transition-delay: 0.3s; }
+.row .reveal:nth-child(1) {
+  transition-delay: 0.1s;
+}
+.row .reveal:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.row .reveal:nth-child(3) {
+  transition-delay: 0.3s;
+}
 /* continue for more cards */
+@media screen and (max-width: 576px) {
+  .project-hero p {
+    font-size: 1em !important;
+  }
+}
