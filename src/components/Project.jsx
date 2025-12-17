@@ -134,7 +134,7 @@ const Project = () => {
 
                   <div className="d-flex justify-content-between align-items-center mt-3">
                     <a
-                      href="https://taskify-2025.netlify.app"
+                      href="https://assouq.netlify.app"
                       className="btn btn-sm btn-outline-secondary"
                       target="_blank"
                       rel="noopener noreferrer"
