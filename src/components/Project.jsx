@@ -54,8 +54,8 @@ const Project = () => {
                 <img src="../taskifysplash.png" alt="taskify" className="" />
                 <div className="card-body">
                   <p className="card-text">
-                    Taskify is a clean and intuitive task management app that
-                    helps you organize your daily activities efficiently.
+                    <b>Taskify</b> is a clean and intuitive task management app
+                    that helps you organize your daily activities efficiently.
                     {expandedCards["taskify"] && (
                       <span>
                         Built with React, it features task creation, editing,
@@ -82,7 +82,10 @@ const Project = () => {
                       View
                     </a>
 
-                    <div className="d-flex align-items-center gap-3" style={{marginRight:'2em'}}>
+                    <div
+                      className="d-flex align-items-center gap-3"
+                      style={{ marginRight: "2em" }}
+                    >
                       <img
                         src="./skillIcons/react.png"
                         alt="React"
@@ -104,35 +107,60 @@ const Project = () => {
               </div>
             </div>
 
-            {/* 2nd project - Backroads */}
+            {/* 2nd project - Assouq */}
             <div className="col reveal">
               <div className="card shadow-sm overlay-card">
-                <img src="../backroads.jpeg" alt="backroads" className="" />
+                <img src="./1.png" alt="taskify" className="" />
                 <div className="card-body">
                   <p className="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
+                    <b>Assouq</b> is a responsive e-commerce web interface
+                    inspired by modern online marketplaces. The project focuses
+                    on
+                    {expandedCards["taskify"] && (
+                      <span>
+                        clean UI design, structured layouts, and user-friendly
+                        navigation for browsing products, categories, and
+                        promotions. It demonstrates strong frontend skills in
+                        building scalable and responsive shopping experiences.
+                      </span>
+                    )}
                   </p>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <div className="btn-group">
-                      <a
-                        href="https://my-backroad.netlify.app"
-                        className="btn btn-sm btn-outline-secondary"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        View
-                      </a>
+                  <button
+                    onClick={() => toggleReadMore("taskify")}
+                    className="btn btn-link p-0 text-decoration-none read-more-btn"
+                  >
+                    {expandedCards["taskify"] ? "Read Less" : "Read More"}
+                  </button>
 
-                      <a
-                        href="#"
-                        className="btn btn-sm btn-outline-secondary"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Comment
-                      </a>
+                  <div className="d-flex justify-content-between align-items-center mt-3">
+                    <a
+                      href="https://taskify-2025.netlify.app"
+                      className="btn btn-sm btn-outline-secondary"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View
+                    </a>
+
+                    <div
+                      className="d-flex align-items-center gap-3"
+                      style={{ marginRight: "2em" }}
+                    >
+                      <img
+                        src="./skillIcons/react.png"
+                        alt="React"
+                        className="project-skills"
+                      />
+                      <img
+                        src="./skillIcons/css.png"
+                        alt="CSS"
+                        className="project-skills"
+                      />
+                      <img
+                        src="./skillIcons/js.png"
+                        alt="JavaScript"
+                        className="project-skills"
+                      />
                     </div>
                   </div>
                 </div>
